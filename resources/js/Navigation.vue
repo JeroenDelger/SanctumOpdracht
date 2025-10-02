@@ -14,6 +14,5 @@
     <div></div>
 </template>
 <script setup>
-import { ref } from "vue";
 import { getLoggedInUser } from "./domains/auth/index";
 </script>
