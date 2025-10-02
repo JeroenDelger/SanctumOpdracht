@@ -1,5 +1,5 @@
 <template>
-    <nav :key="navigationKey">
+    <nav>
         <div v-if="getLoggedInUser">
             <router-link :to="{ name: 'user' }">User Page</router-link> |
             <router-link :to="{ name: 'logout' }">Logout</router-link> |
@@ -16,6 +16,4 @@
 <script setup>
 import { ref } from "vue";
 import { getLoggedInUser } from "./domains/auth/index";
-
-const navigationKey = ref(0);
 </script>
