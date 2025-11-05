@@ -2,6 +2,7 @@
     <div v-if="getLoggedInUser">
         {{ redirectToUser() }}
         <!-- Het lukte me niet om via de route te checken of je ingelogd bent  -->
+         <!-- TODO: uitzoeken hoe je dit alnsog via router kunt doen, is mooier dan hier in de pagina -->
     </div>
     <div v-else>
         <form @submit.prevent="handleSubmit">
@@ -38,8 +39,10 @@ const form = ref({
 });
 
 const handleSubmit = async () => {
+    // TODO: login functie kan in auth/index.ts
     await axios.get("/sanctum/csrf-cookie");
     await postRequest("/login", form.value);
+    // TODO: router.go() zou niet nodig moeten zijn als je alles goed reactive maakt. Probeer dit alsnog voor elkaar te krijgen
     router.go(); //Refresh page zodat navigatie bar update en je naar user page gaat met v-if (niet mooi maar kon niets anders bedenken)
 };
 

@@ -15,6 +15,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
     Route::view('/', 'welcome' );
+    // TODO: ongebruikte commentaren verwijderen voor betere leesbaarheid van code
     // Route::view('/register', function(){
     //     if(Auth::check()){
     //         return redirect()->route('user');
